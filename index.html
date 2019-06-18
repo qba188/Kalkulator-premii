@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Jakub Sobczyński">
+		<title>Kalkulator wynagrodzeń iSpot</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+	</head>
+	<body>
+		<div class="">
+			<nav class="navbar navbar-light">
+				<form class="form-inline"></form>
+					<a class="btn btn-outline-dark btn-block btn-lg" href="#ios" role="button">iOS</a>
+					<a class="btn btn-outline-dark btn-block btn-lg" href="#mac" role="button">Mac</a>					<a class="btn btn-outline-dark btn-block btn-lg" href="#adm" role="button">Administracja</a>
+				</form>
+			</nav>
+		</div>
+		<div class=" main-content" id="ios">
+			<div class="grid-container">
+				<div class="grid-item-1">Kalkulator iOS</div>
+				<div class="grid-item-1">
+					<div class="input-group center">
+						<div class="input-group-prepend">
+						<span class="input-group-text">Podaj sumę diagnostyk oraz zakończeń:<input class="box" type="number" name="diagiOS"></span>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item">ACSE 30%</div>
+				<div class="grid-item">CSAT 30%</div>
+				<div class="grid-item">Debit Memo 40%</div>
+				<div class="grid-item">
+					&#x3E 165%<input type="radio" name="iosacse" value="1.2"><br>
+					165-164%<input type="radio" name="iosacse" value="1"><br>
+					163%<input type="radio" name="iosacse" value="0.8"><br>
+					162%<input type="radio" name="iosacse" value="0.6"><br>
+					161%<input type="radio" name="iosacse" value="0.4"><br>
+					160%<input type="radio" name="iosacse" value="0.2"><br>
+					&#x3C 160%<input type="radio" name="iosacse" value="0">
+				</div>
+				<div class="grid-item">
+					100%-93%<input type="radio" name="ioscs" value="1.2"><br>
+					92-90%<input type="radio" name="ioscs" value="1"><br>
+					89%<input type="radio" name="ioscs" value="0.8"><br>
+					88%<input type="radio" name="ioscs" value="0.6"><br>
+					87%<input type="radio" name="ioscs" value="0.4"><br>
+					86%<input type="radio" name="ioscs" value="0.2"><br>
+					&#x3C 86%<input type="radio" name="ioscs" value="0"><br>
+				</div>
+				<div class="grid-item">
+					0-200 PLN<input type="radio" name="iosdb" value="1"><br>
+					200-300 PLN<input type="radio" name="iosdb" value="0.8"><br>
+					300-400 PLN<input type="radio" name="iosdb" value="0.6"><br>
+					400-500 PLN<input type="radio" name="iosdb" value="0.4"><br>
+					500-600 PLN<input type="radio" name="iosdb" value="0.2"><br>
+					&#x3C 600 PLN<input type="radio" name="iosdb" value="0"><br>
+				</div>
+				<div class="grid-item submit"><a class="btn btn-outline-primary btn-block" role="button"value="Oblycz" onclick="sum()">Oblicz</a>
+				</div>
+				<div class="grid-item sum" id="sum" >SUMA</div>
+			</div>
+		</div>
+
+		<div class=" main-content" id="mac">
+			<div class="grid-container">
+				<div class="grid-item-1">Kalkulator Mac</div>
+				<div class="grid-item-1">
+					<div class="input-group center">
+						<div class="input-group-prepend">
+						<span class="input-group-text">Podaj sumę diagnostyk oraz zakończeń:<input class="box" type="number" name="diagMac"></span>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item">ACSE 30%</div>
+				<div class="grid-item">CSAT 30%</div>
+				<div class="grid-item">Debit Memo 40%</div>
+				<div class="grid-item">
+					&#x3E 165%<input type="radio" name="macacse" value="1.2"><br>
+					165-164%<input type="radio" name="macacse" value="1"><br>
+					163%<input type="radio" name="macacse" value="0.8"><br>
+					162%<input type="radio" name="macacse" value="0.6"><br>
+					161%<input type="radio" name="macacse" value="0.4"><br>
+					160%<input type="radio" name="macacse" value="0.2"><br>
+					&#x3C 160%<input type="radio" name="macacse" value="0">
+				</div>
+				<div class="grid-item">
+					100%-93%<input type="radio" name="maccs" value="1.2"><br>
+					92-90%<input type="radio" name="maccs" value="1"><br>
+					89%<input type="radio" name="maccs" value="0.8"><br>
+					88%<input type="radio" name="maccs" value="0.6"><br>
+					87%<input type="radio" name="maccs" value="0.4"><br>
+					86%<input type="radio" name="maccs" value="0.2"><br>
+					&#x3C 86%<input type="radio" name="maccs" value="0"><br>
+				</div>
+				<div class="grid-item">
+					0-200 PLN<input type="radio" name="macdb" value="1"><br>
+					200-300 PLN<input type="radio" name="macdb" value="0.8"><br>
+					300-400 PLN<input type="radio" name="macdb" value="0.6"><br>
+					400-500 PLN<input type="radio" name="macdb" value="0.4"><br>
+					500-600 PLN<input type="radio" name="macdb" value="0.2"><br>
+					&#x3C 600 PLN<input type="radio" name="macdb" value="0"><br>
+				</div>
+				<div class="grid-item submit"><a class="btn btn-outline-primary btn-block" role="button" value="Oblycz" onclick="sumMac()">Oblicz</a></div>
+				<div class="grid-item sum" id="sumMac" >SUMA</div>
+			</div>
+		</div>
+		<div class="main-content" id="adm">
+			<div class="grid-container-adm">
+				<div class="grid-item-1">Kalkulator Administracja</div>
+				<div class="grid-item">
+					100%-93%<input type="radio" name="admcs" value="1.2"><br>
+					92-90%<input type="radio" name="admcs" value="1"><br>
+					89%<input type="radio" name="admcs" value="0.8"><br>
+					88%<input type="radio" name="admcs" value="0.6"><br>
+					87%<input type="radio" name="admcs" value="0.4"><br>
+					86%<input type="radio" name="admcs" value="0.2"><br>
+					&#x3C 86%<input type="radio" name="admcs" value="0"><br>
+				</div>
+				<div class="grid-item center">
+					<div class="input-group center">
+						<div class="input-group-prepend">
+						<span class="input-group-text">Podaj wysokość wynagrodzenia zasadniczego brutto<input class="box" type="number" name="diagAdm"></span>
+						</div>
+						
+					</div>
+				</div>
+				<div class="grid-item submit"><a class="btn btn-outline-primary btn-block" role="button" value="Oblycz" onclick="sumAdm()">Oblicz</a></div>
+				<div class="grid-item sum-adm" id="sumAdm" >SUMA</div>
+			</div>
+		</div>
+
+		<script src="js/js.js"></script>
+	</body>
+</html>
